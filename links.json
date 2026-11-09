@@ -1,0 +1,8 @@
+{
+  "quickstart": "https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md",
+  "code": "https://github.com/jctian98/longcap-code",
+  "model_fp8": "https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8",
+  "model_bf16": "https://huggingface.co/JinchuanTian/LongCap-35B-A3B",
+  "benchmark": "https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long",
+  "paper": null
+}
