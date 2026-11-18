@@ -3,68 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src blob:; connect-src 'self'; font-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
-  <meta name="description" content="LongCap: timestamped audio captioning and speech diarization from short clips to hours of audio. Explore four full recordings with human labels and LongCap-35B-A3B-FP8 predictions.">
-  <meta name="author" content="Jinchuan Tian, Sen Chen, Wenbin Huang, Chao Weng, Zhengwei Huang, Jiatong Shi, Yichen Lu, Haoran Wang, Shinji Watanabe, Cong Zhou">
-  <title>LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self' blob:; connect-src 'self'; font-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="description" content="LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing. Explore audio, reference events, and LongCap 35B and 122B predictions with synchronized event timelines and dependency links.">
+  <title>LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing</title><meta name="author" content="Jinchuan Tian, Sen Chen, Wenbin Huang, Chao Weng, Zhengwei Huang, Jiatong Shi, Yichen Lu, Haoran Wang, Shinji Watanabe, Cong Zhou">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#explorer">Skip to examples</a>
-  <header class="topbar"><a class="wordmark" href="#">LongCap<span class="mark-dot" aria-hidden="true">●</span></a><nav id="research-links" aria-label="Research resources"><a href="#explorer">Explore the recordings ↗</a></nav></header>
-  <main>
-    <section class="hero" aria-labelledby="title">
-      <p class="eyebrow">LONG-FORM AUDIO UNDERSTANDING</p>
-      <h1 id="title">A whole recording.<br><span>Every part of the story.</span></h1>
-      <p class="paper-title">LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing</p>
-      <p class="intro">LongCap describes the speech, music, and sound events in a recording with timestamps and structured attributes, and transcribes speech with speaker labels, from short clips to hours of audio.</p>
-      <div class="hero-links"><a id="link-quickstart" class="button" href="https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md" target="_blank" rel="noopener noreferrer">Quickstart</a><a id="link-fp8" class="button secondary" href="https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8" target="_blank" rel="noopener noreferrer">Model, FP8 (one H100)</a><a id="link-bf16" class="button secondary" href="https://huggingface.co/JinchuanTian/LongCap-35B-A3B" target="_blank" rel="noopener noreferrer">Model, BF16 (two H100)</a><a id="link-benchmark" class="button secondary" href="https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long" target="_blank" rel="noopener noreferrer">Benchmark</a><a id="link-code" class="button secondary" href="https://github.com/jctian98/longcap-code" target="_blank" rel="noopener noreferrer">Code</a></div>
-      <p class="muted">Paper (arXiv, coming soon)</p>
-      <p class="intro">Below, explore four full recordings and compare the human reference with LongCap-35B-A3B-FP8 on one shared timeline.</p>
-      <details class="authors"><summary>Authors &amp; affiliations</summary>
-        <p>Jinchuan Tian<sup>1*</sup>, Sen Chen<sup>2*</sup>, Wenbin Huang<sup>2*</sup>, Chao Weng<sup>2†</sup>, Zhengwei Huang<sup>2</sup>, Jiatong Shi<sup>2</sup>, Yichen Lu<sup>2</sup>, Haoran Wang<sup>1</sup>, Shinji Watanabe<sup>1</sup>, Cong Zhou<sup>2</sup></p>
-        <p><sup>1</sup> Language Technologies Institute, Carnegie Mellon University<br><sup>2</sup> Independent Researcher</p>
-        <p class="muted">* Equal contribution &nbsp; † Project lead</p>
-      </details>
-      <div class="facts"><span><strong>4</strong> full recordings</span><span><strong>7.05 h</strong> of audio timelines</span><span><strong>6,520</strong> human-labeled events</span></div>
-    </section>
-    <section id="explorer" aria-labelledby="explorer-title">
-      <div class="section-heading"><div><p class="eyebrow">THE LISTENING ROOM</p><h2 id="explorer-title">Choose a recording</h2></div><p class="muted">English &amp; Chinese · Film &amp; stage</p></div>
-      <div id="recordings" class="recordings" aria-label="Recordings"><p>Loading examples…</p></div>
-      <p id="error" class="notice error" role="alert" hidden></p>
-      <section id="workspace" class="workspace" hidden aria-labelledby="recording-title">
-        <div class="recording-header"><div><p id="recording-kind" class="eyebrow"></p><h2 id="recording-title"></h2></div><div class="source-actions"><a id="source-link" class="button secondary" target="_blank" rel="noopener noreferrer">Open original source ↗</a><a id="download-link" class="text-link" download>Download labels &amp; predictions ↓</a></div></div>
-        <div class="playback">
-          <div class="playback-heading"><div><h3>Listen with a local file</h3><p>The media stays in your browser. Nothing is uploaded.</p></div><label class="button file-button">Choose audio or video<input id="local-file" type="file" accept="audio/*,video/*"></label></div>
-          <audio id="media" controls preload="metadata" aria-label="Local recording playback"></audio>
-          <p id="media-status" class="muted" role="status">Open the source link to obtain the recording, then choose your local copy. You can browse all captions without a file.</p>
-          <p class="alignment-note">Use the same edition and timeline as the benchmark. Current source encodings and offsets have not been verified; matching duration alone does not verify the recording.</p>
-        </div>
-        <div class="timeline">
-          <div class="time-controls"><label for="jump-time">Go to time</label><input id="jump-time" value="0:00" inputmode="decimal" aria-describedby="time-help"><button id="jump-button" class="button small">Go</button><output id="clock" for="timeline jump-time">0:00 / 0:00</output></div>
-          <label class="sr-only" for="timeline">Recording timeline in seconds</label><input id="timeline" type="range" min="0" max="1" value="0" step="0.01">
-          <p id="time-help" class="muted">Enter seconds, mm:ss, or hh:mm:ss. Click any event time to jump.</p>
-          <div class="view-controls"><label for="view-mode">Show</label><select id="view-mode"><option value="follow">Events around the playhead</option><option value="all">All events, 50 per page</option></select><span class="legend"><span class="speech-key">Speech</span><span class="music-key">Music</span><span class="sound-key">Sound</span></span></div>
-        </div>
-        <p id="model-notice" class="notice"></p>
-        <div class="panels">
-          <section class="panel" aria-labelledby="reference-title"><div class="panel-heading"><div><p class="eyebrow">HUMAN ANNOTATIONS</p><h3 id="reference-title">Reference</h3></div><span id="reference-count" class="count"></span></div><p id="reference-summary" class="panel-summary" aria-live="polite"></p><div id="reference-events" class="events"></div><div id="reference-pagination" class="pagination"></div></section>
-          <section class="panel model-panel" aria-labelledby="prediction-title"><div class="panel-heading"><div><p class="eyebrow">MODEL PREDICTIONS</p><h3 id="prediction-title">LongCap-35B-A3B-FP8</h3></div><span id="prediction-count" class="count"></span></div><p id="prediction-summary" class="panel-summary" aria-live="polite"></p><div id="prediction-events" class="events"></div><div id="prediction-pagination" class="pagination"></div></section>
-        </div>
-        <details class="data-notes"><summary>About these labels and predictions</summary><p>The reference retains the benchmark's known long events and annotation gaps. One mixed-speaker annotation at 4589–5010 seconds in the Oscars recording was excluded; no replacement labels were invented.</p><p>Predictions are the model's saved single pass over each full recording, kept with their errors. All event times and attributes are preserved. Three of the four outputs are marked partial because some chunks still failed after retries.</p><p id="recording-notes"></p><p>Browsing changes which events are visible; it does not modify the downloadable data. Original property names and annotation languages are preserved.</p></details>
-      </section>
-    </section>
-  </main>
-  <footer><a class="wordmark" href="#">LongCap<span class="mark-dot" aria-hidden="true">●</span></a><p>LongCapBench-TAC-Long v0.8 · Code, model weights, and annotations are released under Apache-2.0. Original media keeps its provider's terms. No audio or video is hosted here.<br>Contact: Jinchuan Tian and Shinji Watanabe, Carnegie Mellon University · <a href="mailto:jinchuat@andrew.cmu.edu">jinchuat@andrew.cmu.edu</a>, <a href="mailto:swatanab@andrew.cmu.edu">swatanab@andrew.cmu.edu</a></p><details class="data-notes"><summary>Cite LongCap</summary><pre>@misc{tian2026longcap,
-  title  = {LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing},
-  author = {Tian, Jinchuan and Chen, Sen and Huang, Wenbin and Weng, Chao and Huang, Zhengwei and Shi, Jiatong and Lu, Yichen and Wang, Haoran and Watanabe, Shinji and Zhou, Cong},
-  year   = {2026},
-  howpublished = {Preprint},
-  url    = {https://jctian98.github.io/longcap/}
-}</pre></details></footer>
-  <noscript><p class="notice">Enable JavaScript to use the timeline. Four full-recording examples contain human labels and LongCap-35B-A3B-FP8 predictions. No media is bundled.</p></noscript>
+  <div id="app"><main class="container loading-research"><div class="eyebrow research-eyebrow">LONGCAP · RESEARCH DEMO</div><h1>LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing</h1><p class="loading-authors">Jinchuan Tian<sup>1*</sup>, Sen Chen<sup>2*</sup>, Wenbin Huang<sup>2*</sup>, Chao Weng<sup>2†</sup>, Zhengwei Huang<sup>2</sup>, Jiatong Shi<sup>2</sup>, Yichen Lu<sup>2</sup>, Haoran Wang<sup>1</sup>, Shinji Watanabe<sup>1</sup>, Cong Zhou<sup>2</sup></p><p class="loading-affiliations"><sup>1</sup> Language Technologies Institute, Carnegie Mellon University<br><sup>2</sup> Independent Researcher</p><p class="contribution-note"><span>* Equal contribution</span><span>† Project lead</span></p><p class="loading">Preparing the listening room…</p></main></div>
+  <noscript>Enable JavaScript to explore the synchronized audio and event timelines. The research title and author attribution are shown above.</noscript>
 </body>
 </html>

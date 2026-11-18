@@ -1,0 +1,177 @@
+{
+  "source": "Original LongCap demo, October 4, 2026",
+  "files": {
+    "catalog.json": {
+      "bytes": 6207,
+      "sha256": "ba6d2006336a7921cfdb65cdeefa1ba42531791dbbe1ca390345417e2b2009aa"
+    },
+    "data/en-film.json": {
+      "bytes": 6518779,
+      "sha256": "911529ceccce9845e7b83e4829e7d239bdae134c45bafca71a5804a2765c0c47"
+    },
+    "data/en-stage.json": {
+      "bytes": 4008724,
+      "sha256": "626063838b37fcad5504ffff21e5c71128d5cb702c7d916cfc6285c075d00e20"
+    },
+    "data/short-01.json": {
+      "bytes": 38827,
+      "sha256": "250141e433736594a4ec4dbdc674cec34047d3b1ba626aed724855f9f03f5716"
+    },
+    "data/short-02.json": {
+      "bytes": 24098,
+      "sha256": "0466d623c2ae242ecd57119e1c8e6d03ffb344c8155e480453b1c08cae7a6d1e"
+    },
+    "data/short-03.json": {
+      "bytes": 35888,
+      "sha256": "f404de7bdf660e39c6701247980b39b5cb7ef51497f44eba1e940fb39c6f2446"
+    },
+    "data/short-04.json": {
+      "bytes": 48692,
+      "sha256": "3734a13b49d289798afdf82de3b3418560736031465ba1f3563d9147568b4622"
+    },
+    "data/short-05.json": {
+      "bytes": 27693,
+      "sha256": "c3e223c10a9cae21ccb12b6b5eec7a681c2c9dc42b4ecf41a051be3c565e8bcf"
+    },
+    "data/short-06.json": {
+      "bytes": 64862,
+      "sha256": "4311e0b596f4e074eaa4c31fdcc59763d824e75bab615080f10098779c43f3b0"
+    },
+    "data/short-07.json": {
+      "bytes": 50516,
+      "sha256": "884ce2f1a808ff98fe6ae7450f7bcee714ef2d34e8051e054fb219c68ad724d6"
+    },
+    "data/short-08.json": {
+      "bytes": 43896,
+      "sha256": "30a658e024efcf8c240ccbc7fee8c2b1f35139eb31af069773b50404111cc97a"
+    },
+    "data/short-09.json": {
+      "bytes": 26753,
+      "sha256": "847a3131a8990657757e3c90c28c70b87446c394715be25996576764a9238b80"
+    },
+    "data/short-10.json": {
+      "bytes": 32907,
+      "sha256": "1215341b7254944bc289a96e93b4cd31bba046b8b3784d0d75245bdd0b2ed86d"
+    },
+    "data/zh-film.json": {
+      "bytes": 6153183,
+      "sha256": "f0444b67a0a96c8a2eca2124df672e6c5ce54ebce71e94a488ec324bfe7b6c63"
+    },
+    "data/zh-stage.json": {
+      "bytes": 4833493,
+      "sha256": "9f95031a09f53e9c89057c2b1b570f36e0f27f8523fe76a79de21eb2f91894c7"
+    },
+    "audio/en-film.mp3": {
+      "bytes": 19920535,
+      "sha256": "908b11b9b5e2850a0b16a9af81b3d7fa332578c7d2df3e7be731f0581e6d3ed3"
+    },
+    "audio/en-film.webm": {
+      "bytes": 21695427,
+      "sha256": "edc95ed713392c8530cd32ad5aeb3a374483ace31a4c7b126ef85918e7e45571"
+    },
+    "audio/en-stage.mp3": {
+      "bytes": 16849162,
+      "sha256": "16bdb02ce582b744aca480dad49e3b0129f2d853967b545deaaf94c8e3fd4264"
+    },
+    "audio/en-stage.webm": {
+      "bytes": 18284307,
+      "sha256": "62971a30c9b2f1678ef71e1c875c2b6eb7a9cd33f540ce9813589860b7b2dd5b"
+    },
+    "audio/short-01.mp3": {
+      "bytes": 474591,
+      "sha256": "afe26215612ce57dae05b4537b5215f781aa7dcb9e0915fa65e999d1a580b613"
+    },
+    "audio/short-01.webm": {
+      "bytes": 498741,
+      "sha256": "4359ae9d4e991f1c758f4220c91efbe317e678c0110345137eb0d136753a682f"
+    },
+    "audio/short-02.mp3": {
+      "bytes": 457455,
+      "sha256": "4280673a128f544fa6834949099809574e4932aacfcd0057ac272bb9f4d5784e"
+    },
+    "audio/short-02.webm": {
+      "bytes": 480672,
+      "sha256": "8b6ab31c93c780e4108094ecbf3346b92a85fe2738147709b13d4636e3d991d8"
+    },
+    "audio/short-03.mp3": {
+      "bytes": 469994,
+      "sha256": "8214b754a69bcf196fb3a0e94501ebd96a4eb8971e48bfa29e8e6996304feae5"
+    },
+    "audio/short-03.webm": {
+      "bytes": 493753,
+      "sha256": "d492c98ad04413aa2ab9855801a556c8cfb747f0e863812d1b920295dad3510c"
+    },
+    "audio/short-04.mp3": {
+      "bytes": 469367,
+      "sha256": "4496834ab02cc1dcc1bd02c463e3d2e2e3098cf58cd9bb365b9b8837f1a918a9"
+    },
+    "audio/short-04.webm": {
+      "bytes": 493033,
+      "sha256": "c6002991f47fe5829ce6c8a0e47c35c618070d0ae27351ab8d522978a27b3877"
+    },
+    "audio/short-05.mp3": {
+      "bytes": 352547,
+      "sha256": "43179893393046fc2dc1bb5da72f609ee8896c22f968974d010af74c6cf27054"
+    },
+    "audio/short-05.webm": {
+      "bytes": 370438,
+      "sha256": "1ff161eb8189ec684649c55f1ad91d3aa0e20eb4f3abe86fbf3731804dccac79"
+    },
+    "audio/short-06.mp3": {
+      "bytes": 474173,
+      "sha256": "45e8922c9735484ef8a848600f5dfcc5f0134154de4674e8eaa1399b93ca9e36"
+    },
+    "audio/short-06.webm": {
+      "bytes": 497968,
+      "sha256": "f94b90c564ddb203c1c0d30dae5f17388d24736f2b7c97cd5b15022c4ae7bdba"
+    },
+    "audio/short-07.mp3": {
+      "bytes": 370937,
+      "sha256": "bc9d54008e647a7f8de0f84d4e02ed28750d7d463c812573f92535c4a48b76f0"
+    },
+    "audio/short-07.webm": {
+      "bytes": 389741,
+      "sha256": "e92354ceb9fe63be8e523492bdeff62c1b4721582a29f4835a971dd4697c0d23"
+    },
+    "audio/short-08.mp3": {
+      "bytes": 249938,
+      "sha256": "47dab1b901e9f35577b27d17794bf2b014144150c45f8d7bea46c69146e5580d"
+    },
+    "audio/short-08.webm": {
+      "bytes": 262598,
+      "sha256": "a27fa577b9a7dabcc1eb85c072c34adb156fce8a52a25c96398ab4893c9e6d8b"
+    },
+    "audio/short-09.mp3": {
+      "bytes": 297376,
+      "sha256": "91a15a46b143adde2200ffadfb4bac3f46e6cdba4124f864fffe321c5a7284ce"
+    },
+    "audio/short-09.webm": {
+      "bytes": 312529,
+      "sha256": "51cbb3e7762b5dfa70e91891961551aedaef4c24599b3d253179ac8127440fcc"
+    },
+    "audio/short-10.mp3": {
+      "bytes": 404165,
+      "sha256": "e9cb1267d4bd179f30c55308749fbf5baebb968960e11919569de048bf530e93"
+    },
+    "audio/short-10.webm": {
+      "bytes": 424645,
+      "sha256": "a25acd3873b6d962dfa2e93a64ef5e30e8b213f55a393333ee3d2eb6c7a4cdd5"
+    },
+    "audio/zh-film.mp3": {
+      "bytes": 21070184,
+      "sha256": "515f077f57c839e5038413eb0e95d720adbdb444136bc2fe564b5fd7432d3f8a"
+    },
+    "audio/zh-film.webm": {
+      "bytes": 23086263,
+      "sha256": "f0c9b40a9de1e94c409c5efb9d39aae45a906abce2cc89c9dccf4a12874aff05"
+    },
+    "audio/zh-stage.mp3": {
+      "bytes": 18269100,
+      "sha256": "9b78fd5d4126a79005d33f3f55ed0c5ba97c2af86aa6c25258f9306abd59de8d"
+    },
+    "audio/zh-stage.webm": {
+      "bytes": 20056851,
+      "sha256": "7ee96483659cbf6a837abfab3cc3416f285112cc70d938a962ad1632db6d1ab2"
+    }
+  }
+}

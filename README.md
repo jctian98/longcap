@@ -1,35 +1,45 @@
-# LongCap demo
+# LongCap listening demo
 
-[Project page](https://jctian98.github.io/longcap/) · [Quickstart](https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md) · [Code](https://github.com/jctian98/longcap-code) · [Model, FP8](https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8) · [Model, BF16](https://huggingface.co/JinchuanTian/LongCap-35B-A3B) · [Benchmark](https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long)
+[Project page](https://jctian98.github.io/longcap/) · [Quickstart](https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md) · [Code](https://github.com/jctian98/longcap-code) · [Model, FP8](https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8) · [Model, BF16](https://huggingface.co/JinchuanTian/LongCap-35B-A3B) · [Dataset](https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long)
 
-An interactive companion to *LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing*. Explore timestamped speech, music, and sound-event captions across four full-length recordings, with human references and LongCap-35B-A3B-FP8 predictions side by side.
+An interactive companion to *LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing*. Listen to four complete recordings and ten short clips, with synchronized Reference / LongCap 35B / LongCap 122B panels, waveform seeking, active events, linked context, search, and event-type filters.
 
-The shared timeline and event lists work without media. For synchronized playback, follow a recording's original source link and select a local media file. Playback stays in your browser; the website does not upload the file or redistribute audio/video.
+Audio plays directly from this site. Each example includes MP3 and WebM sources; the player falls back automatically when necessary. No local file, model API, or inference server is needed.
 
-## Preview locally
+The homepage and example footers link to the current code, Quickstart, FP8/BF16 models, and LongCapBench-TAC-Long dataset. Destinations are configured in `links.json`.
 
-This directory is a complete static website. From here:
+## Preview and verification
 
-```bash
-python -m http.server 8081 --bind 127.0.0.1
-```
-
-Open `http://127.0.0.1:8081/`. Use **All events** to browse every saved event, or **Events around the playhead** to follow playback. Event-time buttons seek within a selected local file. The attribute panels preserve the original annotation fields and values.
-
-## Data
-
-The page contains all 6,520 human reference events and 6,505 saved LongCap-35B-A3B-FP8 caption events from LongCapBench-TAC-Long. Each recording displays its saved completion status; three model outputs are partial. Labels and predictions retain their original content.
-
-The optional media-duration check helps detect a different recording, but does not establish exact audio identity. The [benchmark](https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long) supplies evaluated WAV checksums and `verify_audio.py` for that purpose.
-
-The built site consists of HTML, CSS, JavaScript, SVG, and JSON. To regenerate the data from a downloaded copy of the benchmark dataset, use:
+From this repository:
 
 ```bash
-python build.py --benchmark /path/to/extracted/benchmark
+python scripts/serve_demo.py --port 8081
 ```
 
-Navigation destinations are configured in `links.json`. The data build does not download media.
+Open <http://127.0.0.1:8081/longcap/>. The loopback preview supports byte ranges for audio seeking and uses the same project prefix as GitHub Pages.
+
+```bash
+python scripts/verify_demo.py
+# Optional full browser check; requires Playwright and its Chromium browser:
+python scripts/verify_demo.py --browser --output /tmp/longcap-demo-check
+# Repeat against the published site:
+python scripts/verify_demo.py --browser --base https://jctian98.github.io/longcap/ --output /tmp/longcap-demo-live-check
+```
+
+The static check verifies the original audio/data hashes and all example routes. The browser check exercises all 14 examples, playback and late seeking, current/linked event synchronization, audio format fallback, resource links, and mobile layout. Save test reports outside this repository.
+
+## Saved examples
+
+The audio, waveform data, reference events, and both model outputs are restored unchanged from the October 4 paper demo (`af392c0`). Their SHA-256 hashes are recorded in `scripts/demo-asset-manifest.json`. The four long recordings retain all 6,520 reference events. Ten additional clips are each shorter than one minute.
+
+The saved 35B/122B examples retain their original display translations and demo curation; they are separate from the newer released FP8/BF16 model downloads. Reference captions are human annotations; reference dependency links are text-derived candidates, as labeled in the interface. Author affiliations match the current release page.
+
+## Deployment
+
+The site is static and has no build step. GitHub Pages serves `main` from the repository root at <https://jctian98.github.io/longcap/>. The original example paths remain available under `examples/`.
+
+This repository contains the webpage. Inference code lives in [longcap-code](https://github.com/jctian98/longcap-code). The anonymous Cloudflare demo is deployed separately.
 
 ## License
 
-The website, its scripts, and the annotations are released under [Apache-2.0](LICENSE). Source media keeps its original terms.
+The website and its scripts are released under [Apache-2.0](LICENSE). Original audio retains its source terms; this license does not relicense the recordings.
