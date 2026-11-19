@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT
 RESOURCES = {
+    "https://arxiv.org/abs/2611.11125",
     "https://github.com/jctian98/longcap-code",
     "https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md",
     "https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8",
@@ -55,7 +56,7 @@ def static_checks():
         html = path.read_text()
         require("media-src 'self' blob:" in html, f"Media CSP blocks playback: {path.name}")
     links = json.loads((SITE / "links.json").read_text())
-    require(RESOURCES == {links[key] for key in ["code", "quickstart", "model_fp8", "model_bf16", "benchmark"]}, "Missing release resources")
+    require(RESOURCES == set(links.values()), "Missing or unexpected release resources")
     require('/longcap/' in (SITE / '404.html').read_text(), "404 must preserve the project prefix")
     return catalog, {"passed": True, "original_assets": len(manifest["files"]), "public_files": len(actual_files), "examples": len(entries)}
 

@@ -1,12 +1,12 @@
 # LongCap listening demo
 
-[Project page](https://jctian98.github.io/longcap/) · [Quickstart](https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md) · [Code](https://github.com/jctian98/longcap-code) · [Model, FP8](https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8) · [Model, BF16](https://huggingface.co/JinchuanTian/LongCap-35B-A3B) · [Dataset](https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long)
+[Paper (arXiv)](https://arxiv.org/abs/2611.11125) · [Project page](https://jctian98.github.io/longcap/) · [Quickstart](https://github.com/jctian98/longcap-code/blob/main/docs/quickstart.md) · [Code](https://github.com/jctian98/longcap-code) · [Model, FP8](https://huggingface.co/JinchuanTian/LongCap-35B-A3B-FP8) · [Model, BF16](https://huggingface.co/JinchuanTian/LongCap-35B-A3B) · [Dataset](https://huggingface.co/datasets/JinchuanTian/LongCapBench-TAC-Long)
 
 An interactive companion to *LongCap: Hour-Scale Timestamped Audio Captioning via Chunk-wise Processing*. Listen to four complete recordings and ten short clips, with synchronized Reference / LongCap 35B / LongCap 122B panels, waveform seeking, active events, linked context, search, and event-type filters.
 
 Audio plays directly from this site. Each example includes MP3 and WebM sources; the player falls back automatically when necessary. No local file, model API, or inference server is needed.
 
-The homepage and example footers link to the current code, Quickstart, FP8/BF16 models, and LongCapBench-TAC-Long dataset. Destinations are configured in `links.json`.
+The homepage and example footers link to the arXiv paper, code, Quickstart, FP8/BF16 models, and LongCapBench-TAC-Long dataset. Destinations are configured in `links.json`.
 
 ## Preview and verification
 

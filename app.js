@@ -13,6 +13,7 @@
   });
 
   const resourceLabels = [
+    {key: "paper", en: "Paper (arXiv)", zh: "论文 (arXiv)"},
     {key: "code", en: "Code", zh: "代码"},
     {key: "quickstart", en: "Quickstart", zh: "快速开始"},
     {key: "model_fp8", en: "Model · FP8", zh: "模型 · FP8"},
@@ -152,7 +153,7 @@
 
   function resourceLinks(className) {
     const nav = el("nav", `resource-links ${className}`);
-    nav.setAttribute("aria-label", lang === "zh" ? "代码、模型与数据集" : "Code, models, and dataset");
+    nav.setAttribute("aria-label", lang === "zh" ? "论文、代码、模型与数据集" : "Paper, code, models, and dataset");
     resources.forEach(resource => {
       const anchor = link(`${resource[lang]} ↗`, resource.url, "resource-link");
       anchor.target = "_blank";
